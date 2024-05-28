@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ГЛАВНАЯ СТРАНИЦА</h1>
+<br>
+<a href="{% url 'create-poem' %}">Добавить стих</a>
+{% for poem in poems %}
+<p> Название: {{ poem.title }} </p>
+<p> Автор: {{ poem.author }} </p>
+<p> Текст: {{ poem.lyrics|linebreaks }} </p>
+<hr>
+{% endfor %}
+
+</body>
+</html>
